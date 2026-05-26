@@ -8,7 +8,8 @@
 
     class BookController extends Controller {
         public function index() {
-            return new BookCollection(Book::all());
+            //return new BookCollection(Book::all());
+            return new BookCollection(Book::paginate(5)); //Pagination example
         }
 
         public function show($id) {

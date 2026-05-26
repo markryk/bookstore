@@ -121,3 +121,20 @@ The API will be available at http://127.0.0.1:8000/api/books
 - POST /api/books - Create a new book
 - PUT /api/books/{id} - Update an existing book
 - DELETE /api/books/{id} - Delete a book
+
+## Adding Metadata to a Resource Collection
+- Total number of books
+- Pagination details (current page, total pages, etc.)
+- Custom messages or flags
+
+In *BookCollection* class: 
+- with() (method that appends metadata to the API responses, like pagination, counts, or custom messages)
+
+In *BookController* add:
+```
+public function index() {
+    return new BookCollection(Book::paginate(10)); //Pagination example (in that case, 10 books per page)
+}
+```
+##
+**That's all for now! ;)**

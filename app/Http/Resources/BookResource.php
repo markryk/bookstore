@@ -21,5 +21,14 @@
 
             return $data;
         }
+
+        public function with($request) {
+            //Add metadata to the individual resource
+            return [
+                'meta' => [
+                    'message' => 'Book details fetched successfully!',
+                ],
+            ];
+        }
     }
 ?>
